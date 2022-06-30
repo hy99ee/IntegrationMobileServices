@@ -1,0 +1,10 @@
+platform :ios, '13.0'
+use_frameworks!
+
+def baidu_pods
+    pod 'BaiduMobStatCodeless', '~> 5.3'
+end
+
+target 'BaiduMobAnalytics' do
+    baidu_pods
+end
