@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		3B21E063286CABE300FE1C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21E062286CABE300FE1C95 /* AppDelegate.swift */; };
 		3B21E065286CABE300FE1C95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21E064286CABE300FE1C95 /* SceneDelegate.swift */; };
-		3B21E067286CABE300FE1C95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21E066286CABE300FE1C95 /* ViewController.swift */; };
+		3B21E067286CABE300FE1C95 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B21E066286CABE300FE1C95 /* BannerViewController.swift */; };
 		3B21E06A286CABE300FE1C95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E068286CABE300FE1C95 /* Main.storyboard */; };
 		3B21E06C286CABE400FE1C95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E06B286CABE400FE1C95 /* Assets.xcassets */; };
 		3B21E06F286CABE400FE1C95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E06D286CABE400FE1C95 /* LaunchScreen.storyboard */; };
+		3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */; };
+		68C963DA7E4DA261C4768C03 /* Pods_YandexMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3B21E05F286CABE300FE1C95 /* YandexMobileAds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B21E05F286CABE300FE1C95 /* YandexMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B21E062286CABE300FE1C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B21E064286CABE300FE1C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B21E066286CABE300FE1C95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B21E066286CABE300FE1C95 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		3B21E069286CABE300FE1C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B21E06B286CABE400FE1C95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B21E06E286CABE400FE1C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B21E070286CABE400FE1C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexMobileSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68C963DA7E4DA261C4768C03 /* Pods_YandexMobileSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,51 +47,81 @@
 		3B21E056286CABE300FE1C95 = {
 			isa = PBXGroup;
 			children = (
-				3B21E061286CABE300FE1C95 /* YandexMobileAds */,
+				3B21E061286CABE300FE1C95 /* YandexMobileSDK */,
 				3B21E060286CABE300FE1C95 /* Products */,
+				4B496C319F57D70D6E502CE3 /* Pods */,
+				E698F5D57D155CDEA31BDB19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		3B21E060286CABE300FE1C95 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B21E05F286CABE300FE1C95 /* YandexMobileAds.app */,
+				3B21E05F286CABE300FE1C95 /* YandexMobileSDK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3B21E061286CABE300FE1C95 /* YandexMobileAds */ = {
+		3B21E061286CABE300FE1C95 /* YandexMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3BF586DC286F3B3D00F27C6C /* AdsTypes */,
 				3B21E062286CABE300FE1C95 /* AppDelegate.swift */,
 				3B21E064286CABE300FE1C95 /* SceneDelegate.swift */,
-				3B21E066286CABE300FE1C95 /* ViewController.swift */,
 				3B21E068286CABE300FE1C95 /* Main.storyboard */,
 				3B21E06B286CABE400FE1C95 /* Assets.xcassets */,
 				3B21E06D286CABE400FE1C95 /* LaunchScreen.storyboard */,
 				3B21E070286CABE400FE1C95 /* Info.plist */,
 			);
-			path = YandexMobileAds;
+			path = YandexMobileSDK;
+			sourceTree = "<group>";
+		};
+		3BF586DC286F3B3D00F27C6C /* AdsTypes */ = {
+			isa = PBXGroup;
+			children = (
+				3B21E066286CABE300FE1C95 /* BannerViewController.swift */,
+				3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */,
+			);
+			path = AdsTypes;
+			sourceTree = "<group>";
+		};
+		4B496C319F57D70D6E502CE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */,
+				A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E698F5D57D155CDEA31BDB19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B21E05E286CABE300FE1C95 /* YandexMobileAds */ = {
+		3B21E05E286CABE300FE1C95 /* YandexMobileSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B21E073286CABE400FE1C95 /* Build configuration list for PBXNativeTarget "YandexMobileAds" */;
+			buildConfigurationList = 3B21E073286CABE400FE1C95 /* Build configuration list for PBXNativeTarget "YandexMobileSDK" */;
 			buildPhases = (
+				19387B0EFCE79DC23F822198 /* [CP] Check Pods Manifest.lock */,
 				3B21E05B286CABE300FE1C95 /* Sources */,
 				3B21E05C286CABE300FE1C95 /* Frameworks */,
 				3B21E05D286CABE300FE1C95 /* Resources */,
+				AE132CC872C73180B18DC6FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = YandexMobileAds;
-			productName = YandexMobileAds;
-			productReference = 3B21E05F286CABE300FE1C95 /* YandexMobileAds.app */;
+			name = YandexMobileSDK;
+			productName = YandexMobileSDK;
+			productReference = 3B21E05F286CABE300FE1C95 /* YandexMobileSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,20 +139,22 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B21E05A286CABE300FE1C95 /* Build configuration list for PBXProject "YandexMobileAds" */;
+			buildConfigurationList = 3B21E05A286CABE300FE1C95 /* Build configuration list for PBXProject "YandexMobileSDK" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ru,
 			);
 			mainGroup = 3B21E056286CABE300FE1C95;
 			productRefGroup = 3B21E060286CABE300FE1C95 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B21E05E286CABE300FE1C95 /* YandexMobileAds */,
+				3B21E05E286CABE300FE1C95 /* YandexMobileSDK */,
 			);
 		};
 /* End PBXProject section */
@@ -133,12 +172,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19387B0EFCE79DC23F822198 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YandexMobileSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE132CC872C73180B18DC6FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B21E05B286CABE300FE1C95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B21E067286CABE300FE1C95 /* ViewController.swift in Sources */,
+				3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */,
+				3B21E067286CABE300FE1C95 /* BannerViewController.swift in Sources */,
 				3B21E063286CABE300FE1C95 /* AppDelegate.swift in Sources */,
 				3B21E065286CABE300FE1C95 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +364,7 @@
 		};
 		3B21E074286CABE400FE1C95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -289,7 +372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4H567BRJRC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexMobileAds/Info.plist;
+				INFOPLIST_FILE = YandexMobileSDK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -300,16 +383,22 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hy99ee.YandexMobileAds;
+				PRODUCT_BUNDLE_IDENTIFIER = hy99ee.YandexMobileSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				YANDEX_ADS_INTERSTITIAL_FEED_ID = "R-M-XXXXXXX-1";
+				YANDEX_ADS_REWARDED_VIDEO_ADAPTED_LANDSCAPE_WALLPAPER_ID = "R-M-XXXXXXX-5";
+				YANDEX_ADS_REWARDED_VIDEO_ADAPTED_PORTRAIT_WALLPAPER_ID = "R-M-XXXXXXX-4";
+				YANDEX_ADS_REWARDED_VIDEO_ORIGINAL_WALLPAPER_ID = "R-M-XXXXXXX-6";
+				YANDEX_ADS_REWARDED_VIDEO_WALLET_ID = "R-M-XXXXXXX-3";
 			};
 			name = Debug;
 		};
 		3B21E075286CABE400FE1C95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,7 +406,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4H567BRJRC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = YandexMobileAds/Info.plist;
+				INFOPLIST_FILE = YandexMobileSDK/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,18 +417,23 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = hy99ee.YandexMobileAds;
+				PRODUCT_BUNDLE_IDENTIFIER = hy99ee.YandexMobileSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				YANDEX_ADS_INTERSTITIAL_FEED_ID = "R-M-XXXXXXX-1";
+				YANDEX_ADS_REWARDED_VIDEO_ADAPTED_LANDSCAPE_WALLPAPER_ID = "R-M-XXXXXXX-5";
+				YANDEX_ADS_REWARDED_VIDEO_ADAPTED_PORTRAIT_WALLPAPER_ID = "R-M-XXXXXXX-4";
+				YANDEX_ADS_REWARDED_VIDEO_ORIGINAL_WALLPAPER_ID = "R-M-XXXXXXX-6";
+				YANDEX_ADS_REWARDED_VIDEO_WALLET_ID = "R-M-XXXXXXX-3";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B21E05A286CABE300FE1C95 /* Build configuration list for PBXProject "YandexMobileAds" */ = {
+		3B21E05A286CABE300FE1C95 /* Build configuration list for PBXProject "YandexMobileSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B21E071286CABE400FE1C95 /* Debug */,
@@ -348,7 +442,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B21E073286CABE400FE1C95 /* Build configuration list for PBXNativeTarget "YandexMobileAds" */ = {
+		3B21E073286CABE400FE1C95 /* Build configuration list for PBXNativeTarget "YandexMobileSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B21E074286CABE400FE1C95 /* Debug */,

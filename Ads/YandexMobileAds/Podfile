@@ -1,0 +1,10 @@
+platform :ios, '13.0'
+use_frameworks!
+
+def ads_yandex_pods
+    pod 'YandexMobileAds', '4.4.2'
+end
+
+target 'YandexMobileSDK' do
+    ads_yandex_pods
+end
