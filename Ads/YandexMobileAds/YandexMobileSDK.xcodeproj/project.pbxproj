@@ -13,11 +13,13 @@
 		3B21E06A286CABE300FE1C95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E068286CABE300FE1C95 /* Main.storyboard */; };
 		3B21E06C286CABE400FE1C95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E06B286CABE400FE1C95 /* Assets.xcassets */; };
 		3B21E06F286CABE400FE1C95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E06D286CABE400FE1C95 /* LaunchScreen.storyboard */; };
+		3B895316287095C6003508E1 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B895315287095C6003508E1 /* LogView.swift */; };
 		3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */; };
-		68C963DA7E4DA261C4768C03 /* Pods_YandexMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */; };
+		7E9FECB29A1F16C9D856567C /* libPods-YandexMobileSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938D9CC34AFDB379479BE540 /* libPods-YandexMobileSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4AC06611945AC13861F40B /* Pods-YandexMobileSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		3B21E05F286CABE300FE1C95 /* YandexMobileSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B21E062286CABE300FE1C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B21E064286CABE300FE1C95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,10 +28,10 @@
 		3B21E06B286CABE400FE1C95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B21E06E286CABE400FE1C95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B21E070286CABE400FE1C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B895315287095C6003508E1 /* LogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexMobileSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.release.xcconfig"; sourceTree = "<group>"; };
+		938D9CC34AFDB379479BE540 /* libPods-YandexMobileSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBEF81CB489D632E0F066950 /* Pods-YandexMobileSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileSDK.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68C963DA7E4DA261C4768C03 /* Pods_YandexMobileSDK.framework in Frameworks */,
+				7E9FECB29A1F16C9D856567C /* libPods-YandexMobileSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +52,7 @@
 				3B21E061286CABE300FE1C95 /* YandexMobileSDK */,
 				3B21E060286CABE300FE1C95 /* Products */,
 				4B496C319F57D70D6E502CE3 /* Pods */,
-				E698F5D57D155CDEA31BDB19 /* Frameworks */,
+				98603C7221ED4AD404C3BEA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +67,7 @@
 		3B21E061286CABE300FE1C95 /* YandexMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
+				3B895315287095C6003508E1 /* LogView.swift */,
 				3BF586DC286F3B3D00F27C6C /* AdsTypes */,
 				3B21E062286CABE300FE1C95 /* AppDelegate.swift */,
 				3B21E064286CABE300FE1C95 /* SceneDelegate.swift */,
@@ -88,16 +91,16 @@
 		4B496C319F57D70D6E502CE3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */,
-				A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */,
+				1C4AC06611945AC13861F40B /* Pods-YandexMobileSDK.debug.xcconfig */,
+				BBEF81CB489D632E0F066950 /* Pods-YandexMobileSDK.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E698F5D57D155CDEA31BDB19 /* Frameworks */ = {
+		98603C7221ED4AD404C3BEA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5E45E246BE319CE28B86D901 /* Pods_YandexMobileSDK.framework */,
+				938D9CC34AFDB379479BE540 /* libPods-YandexMobileSDK.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,11 +112,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B21E073286CABE400FE1C95 /* Build configuration list for PBXNativeTarget "YandexMobileSDK" */;
 			buildPhases = (
-				19387B0EFCE79DC23F822198 /* [CP] Check Pods Manifest.lock */,
+				BCBE63796338729D8C835BEE /* [CP] Check Pods Manifest.lock */,
 				3B21E05B286CABE300FE1C95 /* Sources */,
 				3B21E05C286CABE300FE1C95 /* Frameworks */,
 				3B21E05D286CABE300FE1C95 /* Resources */,
-				AE132CC872C73180B18DC6FD /* [CP] Copy Pods Resources */,
+				9717F85E5DC768BBE0BD0B70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,7 +176,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19387B0EFCE79DC23F822198 /* [CP] Check Pods Manifest.lock */ = {
+		9717F85E5DC768BBE0BD0B70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCBE63796338729D8C835BEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,23 +215,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AE132CC872C73180B18DC6FD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileSDK/Pods-YandexMobileSDK-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,6 +225,7 @@
 				3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */,
 				3B21E067286CABE300FE1C95 /* BannerViewController.swift in Sources */,
 				3B21E063286CABE300FE1C95 /* AppDelegate.swift in Sources */,
+				3B895316287095C6003508E1 /* LogView.swift in Sources */,
 				3B21E065286CABE300FE1C95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +368,7 @@
 		};
 		3B21E074286CABE400FE1C95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C686795E4A2FB72B6969FE7 /* Pods-YandexMobileSDK.debug.xcconfig */;
+			baseConfigurationReference = 1C4AC06611945AC13861F40B /* Pods-YandexMobileSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,7 +402,7 @@
 		};
 		3B21E075286CABE400FE1C95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A90B33D6EDA39C2B44E3B817 /* Pods-YandexMobileSDK.release.xcconfig */;
+			baseConfigurationReference = BBEF81CB489D632E0F066950 /* Pods-YandexMobileSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
