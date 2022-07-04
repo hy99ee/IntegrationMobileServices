@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - LogViewState
 enum LogViewState {
     case open
     case close
@@ -19,11 +20,66 @@ enum LogViewState {
     }
 }
 
+//// MARK: - LogViewDirection
+//enum LogViewDirection {
+//    case top
+//    case bottom
+//
+//    var openSwipeDirection: UISwipeGestureRecognizer.Direction {
+//        switch self {
+//        case .top:
+//            return .down
+//        case .bottom:
+//            return .up
+//        }
+//    }
+//
+//    var closeSwipeDirection: UISwipeGestureRecognizer.Direction {
+//        switch self {
+//        case .top:
+//            return .up
+//        case .bottom:
+//            return .down
+//        }
+//    }
+//}
+
+// MARK: - LoggerType
 protocol LoggerType {
+//    var logViewPosition: LogViewDirection { get }
+
     func logEvent(_ event: String)
 }
 
+//extension LoggerType {
+//    var logViewPosition: LogViewDirection {
+//        .bottom
+//    }
+//}
+
+
+// MARK: - LogView
 class LogView: UIView {
+    weak var viewControllerDelegate: LogViewControllerDelegate?
+
+    private var viewState = LogViewState.close {
+        didSet {
+            isHiddenView.setImage(isHiddenViewImage, for: .normal)
+        }
+    }
+    private var isHiddenViewImage: UIImage { viewState.imageByState }
+    private lazy var isHiddenView: UIButton = {
+        let isHiddenView = UIButton()
+        isHiddenView.setImage(isHiddenViewImage, for: .normal)
+        isHiddenView.addTarget(self, action:  #selector(tapIsHiddenButton), for: .touchUpInside)
+        
+        return isHiddenView
+    }()
+    private lazy var swipeOpen = UISwipeGestureRecognizer(target: self, action: #selector(openView))
+    private lazy var swipeClose = UISwipeGestureRecognizer(target: self, action: #selector(closeView))
+    
+
+    @discardableResult
     func configured() -> Self {
         configure()
         
@@ -40,27 +96,46 @@ extension LogView: LoggerType {
 private extension LogView {
     func configure() {
         self.backgroundColor = .red
+        
+        configureGestures()
         configureIsHidden()
+        
+        viewControllerDelegate?.topOffset = 100
+        viewControllerDelegate?.initLogView()
+    }
+    
+    func configureGestures() {
+        swipeOpen.direction = .up
+        addGestureRecognizer(swipeOpen)
+        
+        swipeClose.direction = .down
+        addGestureRecognizer(swipeClose)
     }
     
     func configureIsHidden() {
-        let image = LogViewState.open.imageByState
-        let isHiddenView = UIButton()
-        isHiddenView.setImage(image, for: .normal)
-        isHiddenView.addTarget(self, action:  #selector(isHiddenViewAction), for: .touchUpInside)
-        
         addSubview(isHiddenView)
         isHiddenView.translatesAutoresizingMaskIntoConstraints = false
-        isHiddenView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        isHiddenView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        isHiddenView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        isHiddenView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        isHiddenView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        isHiddenView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+    }
+    
+    
+    @objc
+    func openView() {
+        viewControllerDelegate?.openLogView()
+        viewState = .open
+    }
+        
+    @objc
+    func closeView() {
+        viewControllerDelegate?.closeLogView()
+        viewState = .close
     }
     
     @objc
-    func isHiddenViewAction() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            self.removeFromSuperview()
-            self.layoutIfNeeded()
-            })
-
+    func tapIsHiddenButton() {
+        viewState == .open ? closeView() : openView()
     }
 }

@@ -26,7 +26,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-Kj-SHY">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-Kj-SHY">
                                                     <rect key="frame" x="8" y="11.5" width="398" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -50,7 +50,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstitial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-md-PuH">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interstitial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcd-md-PuH">
                                                     <rect key="frame" x="8" y="11.5" width="398" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -125,33 +125,16 @@
                                     <action selector="show:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtg-Pn-LIn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4F-if-FM8">
-                                <rect key="frame" x="173.5" y="815" width="67" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="ZHz-9O-KPc"/>
-                                    <constraint firstAttribute="width" constant="67" id="yBE-8l-kCe"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button"/>
-                                <connections>
-                                    <action selector="actionOpenLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hmz-c6-w5n"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="O4F-if-FM8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7m6-5J-8ex"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4F-if-FM8" secondAttribute="bottom" constant="16" id="AC3-hz-1lF"/>
                             <constraint firstItem="YdN-Fq-zaN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KBM-FX-SD7"/>
                             <constraint firstItem="YdN-Fq-zaN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fHd-ok-SE9"/>
                             <constraint firstItem="2kC-TT-Ov0" firstAttribute="top" secondItem="YdN-Fq-zaN" secondAttribute="bottom" constant="29.5" id="p4R-zn-MuG"/>
                             <constraint firstItem="2kC-TT-Ov0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tnz-ms-PBd"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="an9-U6-XJG" appends="YES" id="oGk-iE-TqE"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="2gk-PX-uRK"/>
                     <connections>
@@ -160,11 +143,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="an9-U6-XJG">
-                    <connections>
-                        <action selector="toUpGestureAction:" destination="BYZ-38-t0r" id="2Zy-A7-fDh"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-117.39130434782609" y="-767.41071428571422"/>
         </scene>
