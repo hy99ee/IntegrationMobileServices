@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  YandexMobileAds
-//
-//  Created by hy99ee on 29.06.2022.
-//
-
 import UIKit
 import YandexMobileAds
 
@@ -28,15 +21,14 @@ class BannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        logView.viewControllerDelegate = self
-        logView.configured()
-        
+
         let adSize = YMAAdSize.fixedSize(with: .init(width: 320, height: 50))
         self.adView = YMAAdView(blockID: "R-M-DEMO-320x50", adSize: adSize)
         self.adView.delegate = self
-        
-        
+
+        logView.viewControllerDelegate = self
+        guard let logData = try? LogStore.shared.data(self) else { return }
+        logView.configured(with: logData)
     }
     
     @IBAction func load(_ sender: Any) {
@@ -90,32 +82,32 @@ extension BannerViewController: LogViewControllerDelegate {
 extension BannerViewController: YMAAdViewDelegate {
     func adViewDidLoad(_ adView: YMAAdView) {
         showButton.isEnabled = true
-        print("Ad loaded")
+        logView.logEvent("Ad loaded")
     }
 
     func adViewDidClick(_ adView: YMAAdView) {
-        print("Ad clicked")
+        logView.logEvent("Ad clicked")
     }
 
     func adView(_ adView: YMAAdView, didTrackImpressionWith impressionData: YMAImpressionData?) {
-        print("Impression tracked")
+        logView.logEvent("Impression tracked")
     }
     
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
         showButton.isEnabled = true
-        print("Ad failed loading. Error: \(error)")
+        logView.logEvent("Ad failed loading. Error: \(error)")
     }
     
     func adViewWillLeaveApplication(_ adView: YMAAdView) {
-        print("Ad will leave application")
+        logView.logEvent("Ad will leave application")
     }
     
     func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
-        print("Ad will present screen")
+        logView.logEvent("Ad will present screen")
     }
 
     func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
-        print("Ad did dismiss screen")
+        logView.logEvent("Ad did dismiss screen")
     }
     
 }
