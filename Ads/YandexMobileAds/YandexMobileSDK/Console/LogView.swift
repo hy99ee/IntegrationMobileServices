@@ -42,6 +42,13 @@ class LogView: UIView {
         
         return text
     }()
+    
+    private lazy var titleBar: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray4
+
+        return view
+    }()
 
     private lazy var swipeOpen = UISwipeGestureRecognizer(target: self, action: #selector(openView))
     private lazy var swipeClose = UISwipeGestureRecognizer(target: self, action: #selector(closeView))
@@ -73,7 +80,7 @@ private extension LogView {
         configureIsHiddenButton()
         configureCleanButton()
         configureLogTextView()
-//        configureTitleLabel()
+        configureTitleBar()
         
         
         viewControllerDelegate?.topOffset = 80
@@ -104,6 +111,7 @@ private extension LogView {
         cleanButton.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         cleanButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
         cleanButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        cleanButton.alpha = 0
     }
 
     func configureLogTextView() {
@@ -114,26 +122,36 @@ private extension LogView {
         textView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         textView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
-//    func configureTitleLabel() {
-//        addSubview(titleLabel)
-//
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-//        titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        titleLabel.trailingAnchor.constraint(equalTo: self.isHiddenButton.leadingAnchor).isActive = true
-//        titleLabel.leadingAnchor.constraint(equalTo: self.cleanButton.trailingAnchor).isActive = true
-//        titleLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//    }
+    func configureTitleBar() {
+        addSubview(titleBar)
+
+        titleBar.translatesAutoresizingMaskIntoConstraints = false
+        titleBar.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        titleBar.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        titleBar.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        titleBar.heightAnchor.constraint(equalToConstant: 3).isActive = true
+    }
     
     @objc
     func openView() {
-        viewControllerDelegate?.openLogView()
-        viewState = .open
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            guard let self = self else { return }
+
+            self.viewControllerDelegate?.openLogView()
+            self.viewState = .open
+            self.cleanButton.alpha = 1
+        }
     }
         
     @objc
     func closeView() {
-        viewControllerDelegate?.closeLogView()
-        viewState = .close
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            guard let self = self else { return }
+
+            self.viewControllerDelegate?.closeLogView()
+            self.viewState = .close
+            self.cleanButton.alpha = 0
+        }
     }
     
     @objc
@@ -166,3 +184,5 @@ enum LogViewState {
         self == .open ? .close : .open
     }
 }
+
+

@@ -15,6 +15,7 @@ class BannerViewController: UIViewController {
 
     private var logView = LogView()
     private lazy var logViewHeight = self.logView.heightAnchor.constraint(equalToConstant: 0)
+    private lazy var buttonsY = self.loadButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     private var _logViewOffset: CGFloat = 0
     
     var adView: YMAAdView!
@@ -26,9 +27,16 @@ class BannerViewController: UIViewController {
         self.adView = YMAAdView(blockID: "R-M-DEMO-320x50", adSize: adSize)
         self.adView.delegate = self
 
+
         logView.viewControllerDelegate = self
-        guard let logData = try? LogStore.shared.data(self) else { return }
-        logView.configured(with: logData)
+        do {
+            logView.configured(with: try LogStore.shared.data(self))
+        } catch {
+            print(String.logDataErrorString(self))
+        }
+
+        logView.translatesAutoresizingMaskIntoConstraints = false
+        buttonsY.isActive = true
     }
     
     @IBAction func load(_ sender: Any) {
@@ -52,8 +60,7 @@ extension BannerViewController: LogViewControllerDelegate {
             _logViewOffset = newValue
         }
     }
-    
-    
+
     
     func initLogView() {
         view.addSubview(logView)
@@ -61,20 +68,22 @@ extension BannerViewController: LogViewControllerDelegate {
         logView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         logView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         logView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        logViewHeight.constant = self.topOffset
+        logViewHeight.constant = topOffset
         logViewHeight.isActive = true
-        
+
         self.view.layoutIfNeeded()
     }
     
     func openLogView() {
         logViewHeight.constant = 500
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        setOpenButtonsPosition()
+        self.view.layoutIfNeeded()
     }
     
     func closeLogView() {
-        logViewHeight.constant = self.topOffset
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        logViewHeight.constant = topOffset
+        setCloseButtonsPosition()
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -110,4 +119,14 @@ extension BannerViewController: YMAAdViewDelegate {
         logView.logEvent("Ad did dismiss screen")
     }
     
+}
+
+private extension BannerViewController {
+    func setCloseButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = 0 }
+    }
+
+    func setOpenButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = -250 }
+    }
 }

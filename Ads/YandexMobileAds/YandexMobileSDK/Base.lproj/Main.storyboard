@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="-858"/>
+            <point key="canvasLocation" x="2741" y="-1847"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hJd-J4-6Ag">
@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Okd-cx-Ykl">
-                                <rect key="frame" x="138" y="358" width="138.5" height="180"/>
+                                <rect key="frame" x="138" y="324" width="138.5" height="248"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AId-k2-8Pa">
                                         <rect key="frame" x="0.0" y="0.0" width="138.5" height="44"/>
@@ -78,8 +78,18 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="ayf-Ni-G83"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHc-lx-Dr3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-pk-nfs">
                                         <rect key="frame" x="0.0" y="68" width="138.5" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Native">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="uge-sx-PNg" kind="show" id="jn8-qO-6wI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHc-lx-Dr3">
+                                        <rect key="frame" x="0.0" y="136" width="138.5" height="44"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Interstitial">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
@@ -88,14 +98,14 @@
                                             <segue destination="bq1-V1-eUB" kind="show" id="oFE-0X-tly"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdj-pk-nfs">
-                                        <rect key="frame" x="0.0" y="136" width="138.5" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0w-5V-agu">
+                                        <rect key="frame" x="0.0" y="204" width="138.5" height="44"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Rewarded">
                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="uge-sx-PNg" kind="show" id="jn8-qO-6wI"/>
+                                            <segue destination="mbr-2z-x2x" kind="show" id="Q7s-MY-ofl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -160,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6F-4y-eML" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="-133"/>
+            <point key="canvasLocation" x="2741" y="-436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r8k-BO-uNn">
@@ -180,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="-1022" y="-325"/>
         </scene>
-        <!--Rewarded View Controller-->
+        <!--Native View Controller-->
         <scene sceneID="58H-zJ-Kil">
             <objects>
-                <viewController id="uge-sx-PNg" customClass="RewardedViewController" customModule="YandexMobileSDK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uge-sx-PNg" customClass="NativeViewController" customModule="YandexMobileSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hya-Ro-bJP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,7 +205,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="load" destination="uge-sx-PNg" eventType="touchUpInside" id="lZF-dB-S5L"/>
+                                    <action selector="load" destination="uge-sx-PNg" eventType="touchUpInside" id="Q4T-ax-adf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlM-gM-kzw">
@@ -205,7 +215,7 @@
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="show" destination="uge-sx-PNg" eventType="touchUpInside" id="p2R-SP-G60"/>
+                                    <action selector="show" destination="uge-sx-PNg" eventType="touchUpInside" id="NXJ-4M-e1K"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -220,13 +230,61 @@
                     </view>
                     <navigationItem key="navigationItem" id="5lU-JK-hPu"/>
                     <connections>
-                        <outlet property="loadButton" destination="746-ux-tdj" id="75g-5d-htN"/>
-                        <outlet property="showButton" destination="qlM-gM-kzw" id="cMp-5q-PDb"/>
+                        <outlet property="loadButton" destination="746-ux-tdj" id="uOq-ov-NF0"/>
+                        <outlet property="showButton" destination="qlM-gM-kzw" id="5iK-53-JGN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZU-lB-ZpJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="586"/>
+            <point key="canvasLocation" x="2741" y="-1132"/>
+        </scene>
+        <!--Rewarded View Controller-->
+        <scene sceneID="h7n-LJ-k7F">
+            <objects>
+                <viewController id="mbr-2z-x2x" customClass="RewardedViewController" customModule="YandexMobileSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RDS-hB-oly">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS7-rl-xNj">
+                                <rect key="frame" x="167" y="426" width="80.5" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Load">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="load" destination="mbr-2z-x2x" eventType="touchUpInside" id="kc5-QF-5a6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ovN-cu-4He">
+                                <rect key="frame" x="163" y="499.5" width="88" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="show" destination="mbr-2z-x2x" eventType="touchUpInside" id="L3h-Kl-VCm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hzr-Gt-oLg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ovN-cu-4He" firstAttribute="centerX" secondItem="RDS-hB-oly" secondAttribute="centerX" id="Myq-m4-gqx"/>
+                            <constraint firstItem="RS7-rl-xNj" firstAttribute="centerX" secondItem="RDS-hB-oly" secondAttribute="centerX" id="TJF-0c-7rh"/>
+                            <constraint firstItem="ovN-cu-4He" firstAttribute="top" secondItem="RS7-rl-xNj" secondAttribute="bottom" constant="29.5" id="cgN-kD-7Ya"/>
+                            <constraint firstItem="RS7-rl-xNj" firstAttribute="centerY" secondItem="RDS-hB-oly" secondAttribute="centerY" id="nMx-ZW-dU9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Ha-jq-2nt"/>
+                    <connections>
+                        <outlet property="loadButton" destination="RS7-rl-xNj" id="rsW-Fb-Zrk"/>
+                        <outlet property="showButton" destination="ovN-cu-4He" id="Glh-ha-5op"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="79c-wS-Oea" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="251"/>
         </scene>
     </scenes>
     <resources>

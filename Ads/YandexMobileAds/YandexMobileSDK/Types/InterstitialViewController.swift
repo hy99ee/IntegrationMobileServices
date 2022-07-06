@@ -9,14 +9,20 @@ class InterstitialViewController: UIViewController {
     
     private var logView = LogView()
     private lazy var logViewHeight = self.logView.heightAnchor.constraint(equalToConstant: 0)
+    private lazy var buttonsY = self.loadButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     private var _logViewOffset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         logView.viewControllerDelegate = self
-        guard let logData = try? LogStore.shared.data(self) else { return }
-        logView.configured(with: logData)
+        do {
+            logView.configured(with: try LogStore.shared.data(self))
+        } catch {
+            print(String.logDataErrorString(self))
+        }
+        
+        buttonsY.isActive = true
     }
     
     @IBAction func load() {
@@ -47,8 +53,6 @@ extension InterstitialViewController: LogViewControllerDelegate {
         }
     }
     
-    
-    
     func initLogView() {
         view.addSubview(logView)
         logView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,12 +67,14 @@ extension InterstitialViewController: LogViewControllerDelegate {
     
     func openLogView() {
         logViewHeight.constant = 500
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        setOpenButtonsPosition()
+        self.view.layoutIfNeeded()
     }
     
     func closeLogView() {
-        logViewHeight.constant = self.topOffset
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        logViewHeight.constant = topOffset
+        setCloseButtonsPosition()
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -117,5 +123,16 @@ extension InterstitialViewController: YMAInterstitialAdDelegate {
 
     func interstitialAd(_ interstitialAd: YMAInterstitialAd, willPresentScreen webBrowser: UIViewController?) {
         logView.logEvent("Interstitial ad will present screen")
+    }
+}
+
+
+private extension InterstitialViewController {
+    func setCloseButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = 0 }
+    }
+
+    func setOpenButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = -250 }
     }
 }

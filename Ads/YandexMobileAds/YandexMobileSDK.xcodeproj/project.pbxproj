@@ -15,6 +15,7 @@
 		3B21E06F286CABE400FE1C95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B21E06D286CABE400FE1C95 /* LaunchScreen.storyboard */; };
 		3B23EE49287464BA007A475D /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23EE48287464BA007A475D /* RewardedViewController.swift */; };
 		3B23EE4B287475CC007A475D /* LogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23EE4A287475CC007A475D /* LogStore.swift */; };
+		3B23EE4D28757C7F007A475D /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B23EE4C28757C7F007A475D /* NativeViewController.swift */; };
 		3B895316287095C6003508E1 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B895315287095C6003508E1 /* LogView.swift */; };
 		3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */; };
 		7E9FECB29A1F16C9D856567C /* libPods-YandexMobileSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 938D9CC34AFDB379479BE540 /* libPods-YandexMobileSDK.a */; };
@@ -32,6 +33,7 @@
 		3B21E070286CABE400FE1C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B23EE48287464BA007A475D /* RewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
 		3B23EE4A287475CC007A475D /* LogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogStore.swift; sourceTree = "<group>"; };
+		3B23EE4C28757C7F007A475D /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		3B895315287095C6003508E1 /* LogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		938D9CC34AFDB379479BE540 /* libPods-YandexMobileSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +73,7 @@
 		3B21E061286CABE300FE1C95 /* YandexMobileSDK */ = {
 			isa = PBXGroup;
 			children = (
-				3B895315287095C6003508E1 /* LogView.swift */,
+				3B23EE4E28758365007A475D /* Console */,
 				3BF586DC286F3B3D00F27C6C /* Types */,
 				3B21E062286CABE300FE1C95 /* AppDelegate.swift */,
 				3B21E064286CABE300FE1C95 /* SceneDelegate.swift */,
@@ -79,9 +81,17 @@
 				3B21E06B286CABE400FE1C95 /* Assets.xcassets */,
 				3B21E06D286CABE400FE1C95 /* LaunchScreen.storyboard */,
 				3B21E070286CABE400FE1C95 /* Info.plist */,
-				3B23EE4A287475CC007A475D /* LogStore.swift */,
 			);
 			path = YandexMobileSDK;
+			sourceTree = "<group>";
+		};
+		3B23EE4E28758365007A475D /* Console */ = {
+			isa = PBXGroup;
+			children = (
+				3B23EE4A287475CC007A475D /* LogStore.swift */,
+				3B895315287095C6003508E1 /* LogView.swift */,
+			);
+			path = Console;
 			sourceTree = "<group>";
 		};
 		3BF586DC286F3B3D00F27C6C /* Types */ = {
@@ -90,6 +100,7 @@
 				3B21E066286CABE300FE1C95 /* BannerViewController.swift */,
 				3BF586DA286F35D200F27C6C /* InterstitialViewController.swift */,
 				3B23EE48287464BA007A475D /* RewardedViewController.swift */,
+				3B23EE4C28757C7F007A475D /* NativeViewController.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 				3BF586DB286F35D200F27C6C /* InterstitialViewController.swift in Sources */,
 				3B21E067286CABE300FE1C95 /* BannerViewController.swift in Sources */,
 				3B23EE49287464BA007A475D /* RewardedViewController.swift in Sources */,
+				3B23EE4D28757C7F007A475D /* NativeViewController.swift in Sources */,
 				3B21E063286CABE300FE1C95 /* AppDelegate.swift in Sources */,
 				3B895316287095C6003508E1 /* LogView.swift in Sources */,
 				3B23EE4B287475CC007A475D /* LogStore.swift in Sources */,

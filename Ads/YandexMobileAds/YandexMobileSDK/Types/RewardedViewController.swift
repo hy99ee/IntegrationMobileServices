@@ -9,14 +9,20 @@ class RewardedViewController: UIViewController {
     
     private var logView = LogView()
     private lazy var logViewHeight = self.logView.heightAnchor.constraint(equalToConstant: 0)
+    private lazy var buttonsY = self.loadButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
     private var _logViewOffset: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         logView.viewControllerDelegate = self
-        guard let logData = try? LogStore.shared.data(self) else { return }
-        logView.configured(with: logData)
+        do {
+            logView.configured(with: try LogStore.shared.data(self))
+        } catch {
+            print(String.logDataErrorString(self))
+        }
+        
+        buttonsY.isActive = true
     }
     
     @IBAction func load() {
@@ -63,12 +69,14 @@ extension RewardedViewController: LogViewControllerDelegate {
     
     func openLogView() {
         logViewHeight.constant = 500
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        setOpenButtonsPosition()
+        self.view.layoutIfNeeded()
     }
     
     func closeLogView() {
-        logViewHeight.constant = self.topOffset
-        UIView.animate(withDuration: 0.5) { [unowned self] in self.view.layoutIfNeeded() }
+        logViewHeight.constant = topOffset
+        setCloseButtonsPosition()
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -89,7 +97,7 @@ extension RewardedViewController: YMARewardedAdDelegate {
     }
     
     func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {
-        logView.logEvent("Loading failed. Error: %@", error)
+        logView.logEvent("Loading failed. Error: \(error)")
     }
 
     func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
@@ -105,7 +113,7 @@ extension RewardedViewController: YMARewardedAdDelegate {
     }
     
     func rewardedAdDidFail(toPresent rewardedAd: YMARewardedAd, error: Error) {
-        logView.logEvent("Failed to present rewarded ad. Error: %@", error)
+        logView.logEvent(String("Failed to present rewarded ad. Error: \(error)"))
     }
     
     func rewardedAdWillAppear(_ rewardedAd: YMARewardedAd) {
@@ -125,10 +133,19 @@ extension RewardedViewController: YMARewardedAdDelegate {
     }
     
     func rewardedAd(_ rewardedAd: YMARewardedAd, willPresentScreen viewController: UIViewController?) {
-        print("Rewarded ad will present screen")
+        logView.logEvent("Rewarded ad will present screen")
     }
 }
 
+private extension RewardedViewController {
+    func setCloseButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = 0 }
+    }
+
+    func setOpenButtonsPosition() {
+        UIView.animate(withDuration: 0.5) { [weak self] in self?.buttonsY.constant = -250 }
+    }
+}
 
 class AdReward: NSObject {
     let name: String
@@ -145,3 +162,5 @@ class AdReward: NSObject {
 private extension YMAReward {
     var adReward: AdReward { AdReward(name: "coins", amount: Double(self.amount)) }
 }
+
+
